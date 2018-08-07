@@ -9,6 +9,5 @@ package newjava3.ex.ex4;
  */
 public class Chicken {
     public static void main(String[] args) {
-
     }
 }
