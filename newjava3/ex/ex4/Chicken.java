@@ -9,5 +9,14 @@ package newjava3.ex.ex4;
  */
 public class Chicken {
     public static void main(String[] args) {
+        int money = 100;
+        int cock, hen, chick;
+        for(cock = 0; cock <= money / 5; cock++)
+            for(hen = 0; hen <= money / 3; hen++)
+                for(chick = 0; chick / 3 <= money; chick++)
+                    //满足3个条件：小鸡个数是3的倍数、鸡的总价100、鸡的总个数100；
+                    if (chick % 3 == 0 && cock * 5 + hen * 3 + chick / 3 == money && cock + hen + chick == 100)
+                            System.out.println("cock:" + cock + "  hen:" + hen + "  chick:" + chick);
+
     }
 }
