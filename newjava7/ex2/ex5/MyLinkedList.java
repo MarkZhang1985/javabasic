@@ -49,14 +49,15 @@ public class MyLinkedList {
             this.next = next;
         }
 
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "prev=" + prev +
-                    ", item=" + item +
-                    ", next=" + next +
-                    '}';
-        }
+        //这里重写toString方法，会互相调用，形成死循环
+//        @Override
+//        public String toString() {
+//            return "Node{" +
+//                    "prev=" + prev +
+//                    ", item=" + item +
+//                    ", next=" + next +
+//                    '}';
+//        }
     }
 
 
@@ -85,7 +86,12 @@ public class MyLinkedList {
             return;
         }
         //若集合不为空
-        if(index == size + 1)addLast(obj);//index为末尾
+        //向集合末尾+1添加元素
+        if(index == size + 1){
+            addLast(obj);
+            return;
+        }
+        //向集合其他位置添加
         nodeAdd(index, obj, first);
 
     }
@@ -99,10 +105,11 @@ public class MyLinkedList {
         last = first;
         size++;
     }
+    //将obj添加到集合末尾+1位置
     private void addLast(Object obj){
-        Node node = new Node(last, obj,null);
-        last.next = node;
-        last = node;
+        Node temp = new Node(last, obj,null);
+        last.next = temp;
+        last = temp;
         size++;
     }
     //将obj增加至index位，利用递归实现
@@ -133,27 +140,64 @@ public class MyLinkedList {
             return;
         }
         //在多元素之中插入
+        System.out.println(node.item);
         Node temp = new Node(node.prev, obj, node);
         node.prev.next = temp;
         node.prev = temp;
+        System.out.println(""+temp.prev.item+temp.item +temp.next.item );
         size++;
+    }
+
+
+
+    //打印所有元素
+    public void showAll(MyLinkedList myLinkedList){
+        Node node = myLinkedList.first;
+        System.out.print("first:" + node.item);
+        System.out.println("\tsize:" + myLinkedList.size);
+        for(int i = 0; i<myLinkedList.size; i++){
+            System.out.print(node.item);
+            System.out.print("\t");
+            node = node.next;
+        }
+        System.out.println();
     }
 
     @Override
     public String toString() {
         return "MyLinkedList{" +
                 "size=" + size +
-                ", first=" + first.toString() +
-                ", last=" + last.toString() +
+                "\n, first=" + "Node{" + "prev=" + first.prev + ", item=" + first.item + ", next=" + first.next + '}'+
+                "\n, last=" + "Node{" + "prev=" + last.prev + ", item=" + last.item + ", next=" + last.next + '}' +
                 '}';
     }
 
     @Test
     public void test01(){
         MyLinkedList myLinkedList = new MyLinkedList();
+        //自动向集合尾部添加
         myLinkedList.add("a");
+        showAll(myLinkedList);
+        //自动向集合尾部添加
         myLinkedList.add("b");
-        System.out.println(myLinkedList);
+        showAll(myLinkedList);
+        //自动向集合尾部添加
+        myLinkedList.add("c");
+        showAll(myLinkedList);
+        //向集合头部添加
+        myLinkedList.add(1,"A");
+        showAll(myLinkedList);
+        //向集合长度+1添加
+        myLinkedList.add(myLinkedList.size+1,"d");
+        showAll(myLinkedList);
+
+        myLinkedList.add(2,"B");
+        showAll(myLinkedList);
+
+        //System.out.println(myLinkedList);
+        //System.out.println(myLinkedList.size);
+        //myLinkedList.add(myLinkedList.size,"d");
+        //System.out.println(myLinkedList);
     }
 
 }
