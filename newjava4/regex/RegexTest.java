@@ -1,6 +1,6 @@
-package java47.regex;
+package newjava4.regex;
 
-public class RegexClass {
+public class RegexTest {
 //	长度为8-10的用户密码(以字母开头，第一位大写、其余可以释怀数字下划线)
 //	电子邮箱验证
 //	手机号验证
@@ -99,7 +99,7 @@ public class RegexClass {
 
 	public static void main(String[] args) {
 
-		RegexClass rc = new RegexClass();
+		RegexTest rc = new RegexTest();
 		String testPassword = "Aa_1234567";
 
 		if(rc.checkPassword(testPassword))

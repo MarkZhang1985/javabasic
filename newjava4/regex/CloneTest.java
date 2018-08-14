@@ -1,6 +1,6 @@
-package java47.regex;
+package newjava4.regex;
 
-public class CloneClass {
+public class CloneTest {
 
 	 class House {
 

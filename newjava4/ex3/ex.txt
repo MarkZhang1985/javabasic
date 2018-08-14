@@ -1,0 +1,78 @@
+在com.yes.dl.common.utils包下创建类StringTools并创建相对应的方法：
+1.	禁止创建对象，并且该类不能被继承
+
+2.	属性DEF_SCALE保留2位小数，不可修改
+
+3.	static BigDecimal convertBigDecimal (Object object)
+a)	注意非空判断
+b)	注意有些数字来的时候是123,456.123
+
+4.	static Double add (Object number1, Object number2)
+a)	使用精准计算
+b)	使用BigDecimal的setScale ( int 小数保留位数，int 进位方式,一般 (BigDecimal.ROUND_HALF_UP))
+
+5.	static Double subtract (Object number1, Object number2)
+a)	同上
+
+6.	static Double multiply (Object number1, Object number2)
+a)	同上
+
+7.	static Double divide (Object number1, Object number2)
+a)	同上
+
+8.	static Double divide (Object number1, Object number2, Integer scale)
+a)	同上
+b)	除数不能为0
+c)	scale不能小于0
+
+9.	static Double round (Object number1, int scale)
+a)	scale不能小于0
+
+10.	static BigDecimal getRandom (int start, int end)
+a)	获取从start到end之间的随机数
+
+DecimalFormat的用法：
+public class Test {
+    public static void main (String [] args) {
+        double pi=3.1415927;//圆周率
+        //取一位整数
+        System.out.println(new DecimalFormat ("0"). format(pi)) ;//3
+        //取一位整数和两位小数
+        System.out.println(new DecimalFormat ("0.00"). format(pi)) ;//3.14
+        //取两位整数和三位小数，整数不足部分以0填补。
+        System.out.println(new DecimalFormat ("00.000"). format(pi)) ;//03.142
+        //取所有整数部分
+        System.out.println(new DecimalFormat ("#"). format(pi)) ;//3
+        //以百分比方式计数，并取两位小数
+        System.out.println(new DecimalFormat ("#. ##%"). format(pi)) ;//314.16%
+
+        long c=299792458;//光速
+        //显示为科学计数法，并取五位小数
+        System.out.println(new DecimalFormat ("#. #####E0"). format(c)) ;//2.99792E8
+        //显示为两位整数的科学计数法，并取四位小数
+        System.out.println(new DecimalFormat ( "00.####E0").format(c));//29.9792E7
+        //每三位以逗号进行分隔。
+        System.out.println(new DecimalFormat (“, ###"). format(c)) ;//299,792,458
+        //将格式嵌入文本
+        System.out.println(new DecimalFormat ("光速大小为每秒,###米").format(c)); //光速大小为每秒299,792,458米
+    }
+}
+
+DecimalFormat format = new DecimalFormat（pattern）;
+
+11.	static String format (Object original, String pattern)
+按传入进来的pattern格式化original对象
+
+12.	static String formatAmount (String original)
+a)	按账户格式格式化，去左右空格，去¥
+b)	¥30，000.00 转为 30000.00
+
+13.	static String formatNumber (String original)
+a)	格式化金额 将30000.00 转为 30，000.00
+
+14.	static String formatAmountString (String amount)
+a)	格式化金额 8888888888.88 转为 ¥8，888，888，888.88
+提示：NumberFormat numberFormat = NumberFormat.getCurrencyInstance()
+
+15.	static String formExRate (String rate)
+a)	0.2 转为 0.200000

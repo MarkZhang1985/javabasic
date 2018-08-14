@@ -1,0 +1,25 @@
+编程题：
+在com.yes.dl.common.utils包下创建类CharacterTools并创建相对应的方法：
+1.	禁止创建对象，并且该类不能被继承
+2.	static boolean isLowerChar (char c) 检测是否为小写字母 提示:小写字母范围97-122
+3.	static boolean isUpperChar (char c) 检测是否为大写字母 提示:大写字母范围65-91
+4.	static boolean isNumberChar (char c) 检测是否为数字 提示:数字范围48-57
+5.	static boolean isLetterChar (char c) 检测是否为字母
+6.	static char transformLowerChar (char c)
+将大写转为小写，如果不是字母或者本身为小写直接返回
+7.	static char transformUpperChar (char c)
+将小写转为大写，如果不是字母或者本身为大写直接返回
+8.	static char transformUpperOrLowerChar (char c)
+将大写转为小写，将小写转为大写，如果不在字母范围内，原样返回
+9.	static char getRandomLowerChar ()
+随机获取一个小写字母
+10.	static char getRandomUpperChar ()
+随机获取一个大写字母
+11.	static char [] getRandomCharArray ()
+随机获取一个字符数组，长度随机，总长度不能超过52，要求字符数组不能重复
+12.	static char [] getRandomCharArrayByNumber (int i)
+随机获取一个字符数组，长度为传入的值I,字符数组不能重复，i值不能超过52，出错提示
+13.	static char [] encryptCharArray (char [] chars)
+提示：通过位移的方式，将原数组中的char偏移固定个数后，生成新字符，并装入新字符数组返回
+14.	static char [] decryptCharArray (char [] chars)
+提示：通过位移的方式，将原数组中的char还原固定个数后，还原成旧字符，转入新字符数组返回

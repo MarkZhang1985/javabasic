@@ -1,0 +1,51 @@
+在com.yes.dl.common.utils包下创建类StringTools并创建相对应的方法：
+1.	禁止创建对象，并且该类不能被继承
+public static boolean isNull (String original)
+判断字符串是否为null
+public static boolean isBlank (String original)
+判断字符串是否为空，为Null
+2.	public static boolean isNotEmpty (String original)
+判断传入的字符串是否非空，即字符串是否等于null，空串，“       ”。
+3.	public static String convertNull (String original)
+转换Null，如果字符串为空，转换为空串返回，否则返回原字符串
+4.	public static String convertNull (String original, String target)
+转换Null，如果字符串为空，使用target替换原字符串返回。否则返回原字符串
+5.	public static int convertNullToNumber (String original)
+转换Null，如果字符串为null，或者空字符串，返回0，否则返回原字符串的整数类型
+6.	public static int convertNullToNumber (String original, int target)
+转换Null，如果字符串为null，或者空字符串，返回target，否则返回原字符串的整数类型。
+7.	public static Integer transformInteger (String original)
+将传入的字符串转换为整数类型
+8.	public static Long transformLong (String original)
+将传入的字符串转换为长整型类型
+9.	public static Float transformFloat (String original)
+将传入的字符串转换为单精度浮点类型
+10.	public static Double transformDouble (String original)
+将传入的字符串转换为双精度浮点类型
+11.	public static boolean isSameCodeAppearsTwoTimes (String original, String sameCode)
+判断相同代码是否出现2次以上
+12.	public static String substringSameCodeFirst (String original, String sameCode)
+如果有相同代码，截取第一次出现的代码，到第二次出现的位置结束的字符串
+13.	public static String subStringSameCodeForLast (String original, String sameCode)
+如果有相同代码，截取第二次出现的代码开始一直到最后的字符串
+14.	public static String subStringSameCodeForLastRecursion (String original, String code)
+如果有2次以上相同代码，截取最后一次出现的代码开始到最后的字符串
+15.	public static String [] substringSameCodeForStringArray (String original，String code)
+以相同代码分段，存入数组中返回
+
+16.	public static String [] ConformingSeparation (String original, String seperator)
+以指定符号对字符串进行分隔，并生成数组返回
+17.	public static String [] ConformingSeparation (String original)
+以默认符号“，”对字符串进行分隔，并生成数组返回，“，”设置为常量
+18.	public static String objectConverLowerString (Object original)
+对象转小写字符串
+19.	public static String objectConverUpperString (Object original)
+对象转大写字符串
+20.	public static String charArrayConvertString (char [] chars)
+将字符数组拼接成字符串
+21.	public static String StringArrayConvertString (String [] original)
+将字符串数组拼接成字符串
+22.	public static String padLeft (String original, String padding)
+判断原字符串中是否有padding的内容，没有在左边进行拼接
+23.	public static String padRight (String original, String padding)
+判断原字符串中是否有padding的内容，没有在右边进行拼接
