@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 import java.util.Scanner;
 

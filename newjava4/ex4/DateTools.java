@@ -1,5 +1,7 @@
 package newjava4.ex4;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -87,11 +89,13 @@ public final class DateTools {
 
     //按格式yyyy-MM-dd 转换给定日期
     static String getReqDate (Date date){
-        SimpleDateFormat simpleDateFormat= new SimpleDateFormat(DATE_FORMAT_DATEONLY);
-        simpleDateFormat.format(date);
-        System.out.println(date);
         return new SimpleDateFormat(DATE_FORMAT_DATEONLY).format(date);
     }
 
+    //按格式yyyy-MM-dd 转换给定的时间戳
+    static String TimestampToDateStr (Timestamp timestamp){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        return df.format(timestamp.getTime());
+    }
 
 }

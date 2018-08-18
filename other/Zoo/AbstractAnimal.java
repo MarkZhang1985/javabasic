@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 /**
  * 动物抽象类

@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 /**
  * 动物园，单例模式（懒汉式）
@@ -11,7 +11,7 @@ public class Zoo {
 	public int animalNumber = 0;//初始没有动物
 	public Animal[] animals = new Animal[cage];
 
-	//创建 Zoo 的一个对象
+	//创建 other.Zoo 的一个对象
 	private static Zoo zoo;
 
 	//让构造函数为 private，这样该类就不会被实例化

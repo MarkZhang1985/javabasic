@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 public class Animal extends AbstractAnimal {
 	@Override

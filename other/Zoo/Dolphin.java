@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 /**
  * @author zhangkaiming

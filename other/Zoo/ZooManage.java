@@ -1,4 +1,4 @@
-package Zoo;
+package other.Zoo;
 
 /**
  * 动物园管理类，实现动物的增删改查
